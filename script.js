@@ -68,4 +68,14 @@ const displayToDo = (lists) => {
         toDoContainer.append(div)
     })
 }
-todoFunk()
+// todoFunk()
+// parameter a specifique id code start here;
+const specifiqueData = (id) =>{
+    fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+    })
+}
+specifiqueData(5)
+// parameter a specifique id code end here;
