@@ -79,3 +79,14 @@ const specifiqueData = (id) =>{
 }
 specifiqueData(5)
 // parameter a specifique id code end here;
+
+// filter kore specifique data load code start here;
+const filterSpecifiqueData = () =>{
+    fetch("https://jsonplaceholder.typicode.com/todos?id=5")
+    .then(res=>res.json())
+    .then(data=>{
+        console.log(data);
+    })
+}
+filterSpecifiqueData()
+// filter kore specifique data load code end here;
