@@ -77,7 +77,8 @@ const specifiqueData = (id) =>{
         console.log(data);
     })
 }
-specifiqueData(5)
+// specifiqueData(5)
+
 // parameter a specifique id code end here;
 
 // filter kore specifique data load code start here;
@@ -88,5 +89,7 @@ const filterSpecifiqueData = () =>{
         console.log(data);
     })
 }
-filterSpecifiqueData()
+// filterSpecifiqueData()
+
 // filter kore specifique data load code end here;
+alert("Asynic,await and curd operation code next time")
