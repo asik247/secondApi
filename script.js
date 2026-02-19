@@ -69,27 +69,51 @@ const displayToDo = (lists) => {
     })
 }
 // todoFunk()
+// console.log("to do next stpe code output");
+// console.log("step next code run before");
+// console.log("to do next stpe code output");
 // parameter a specifique id code start here;
-const specifiqueData = (id) =>{
+const specifiqueData = (id) => {
     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
-    .then(res=>res.json())
-    .then(data=>{
-        console.log(data);
-    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
 }
 // specifiqueData(5)
 
 // parameter a specifique id code end here;
 
 // filter kore specifique data load code start here;
-const filterSpecifiqueData = () =>{
+const filterSpecifiqueData = () => {
     fetch("https://jsonplaceholder.typicode.com/todos?id=5")
-    .then(res=>res.json())
-    .then(data=>{
-        console.log(data);
-    })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data);
+        })
 }
 // filterSpecifiqueData()
 
 // filter kore specifique data load code end here;
 console.log("Asynic,await and curd operation code next time")
+
+
+// Asynic await + try catch code start here;
+const mordernFetch = async () => {
+    // console.log("morder fetch usigin asynic try");
+    try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/posts");
+        const data = await res.json();
+        displayAllPost(data);
+    } catch (error) {
+        console.log("Error message:", error);
+    }
+
+}
+// display all posts code;
+const displayAllPost = (posts) => {
+    posts.forEach(post => {
+        console.log(post);
+    })
+}
+mordernFetch()
