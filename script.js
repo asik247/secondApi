@@ -69,10 +69,7 @@ const displayToDo = (lists) => {
     })
 }
 // todoFunk()
-// console.log("to do next stpe code output");
-// console.log("step next code run before");
-// console.log("to do next stpe code output");
-// parameter a specifique id code start here;
+
 const specifiqueData = (id) => {
     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
         .then(res => res.json())
@@ -116,4 +113,14 @@ const displayAllPost = (posts) => {
         console.log(post);
     })
 }
-mordernFetch()
+// mordernFetch()
+const runCode = async () => {
+    await mordernFetch()
+    console.log("to do next stpe code output");
+    console.log("step next code run before");
+    console.log("to do next stpe code output");
+
+}
+runCode()
+
+// afer code;
