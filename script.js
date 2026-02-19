@@ -1,1 +1,4 @@
-console.log("hi this is scond api repo here now");
+let btnCard = document.getElementById("btnCard");
+btnCard.addEventListener("click",()=>{
+    
+})
