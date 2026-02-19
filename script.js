@@ -92,8 +92,6 @@ const filterSpecifiqueData = () => {
 // filterSpecifiqueData()
 
 // filter kore specifique data load code end here;
-console.log("Asynic,await and curd operation code next time")
-
 
 // Asynic await + try catch code start here;
 const mordernFetch = async () => {
@@ -110,7 +108,7 @@ const mordernFetch = async () => {
 // display all posts code;
 const displayAllPost = (posts) => {
     posts.forEach(post => {
-        console.log(post);
+        // console.log(post);
     })
 }
 // mordernFetch()
@@ -121,6 +119,30 @@ const runCode = async () => {
     console.log("to do next stpe code output");
 
 }
-runCode()
+// runCode()
 
-// afer code;
+// Repetated code start here;
+const commentsAll = async () =>{
+    try{
+        const res = await fetch("https://jsonplaceholder.typicode.com/comments");
+        const data = await res.json();
+        showComments(data);
+    }catch(error){
+        console.log("Error Message",error);
+    }
+}
+const showComments = (comments) =>{
+    comments.forEach(comment=>{
+        // console.log(comment);
+    })
+}
+// commentsAll()
+// Repetated code end here;
+
+// commentsAll after some console code here;
+
+const aferSomeCode =  async () =>{
+    await commentsAll();
+    // console.log("Then successfullo run");
+}
+aferSomeCode()
