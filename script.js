@@ -92,4 +92,4 @@ const filterSpecifiqueData = () =>{
 // filterSpecifiqueData()
 
 // filter kore specifique data load code end here;
-alert("Asynic,await and curd operation code next time")
+console.log("Asynic,await and curd operation code next time")
