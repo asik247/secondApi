@@ -55,12 +55,22 @@ const displayToDo = (lists) => {
     lists.forEach(list => {
         // console.log(list);
         const div = document.createElement("div");
+        // rendering code here;
+        let render2 ;
+        if(list.completed){
+            render2 = "text-green-500"
+        }else{
+            render2 = "text-red-500"
+        }
         div.innerHTML = `
        
         <div class="border-2 border-gray-500 mb-4 p-4 round-l ">
             <div class = "flex gap-4">
                  <p>${list.completed == true ? `<i class="fa-solid fa-circle-check"></i>` : `<i class="fa-solid fa-check"></i>`}</p>
-                 <h2 class="font-extrabold">${list.title}</h2>
+                 <h2 class="font-extrabold ${render2}">
+                 ${list.title}
+                 </h2>
+                  <p class="${list.completed?"text-green-500":"text-red-500"}">${list.id}</p>
             </div>
         
         </div>
@@ -68,7 +78,7 @@ const displayToDo = (lists) => {
         toDoContainer.append(div)
     })
 }
-// todoFunk()
+todoFunk()
 
 const specifiqueData = (id) => {
     fetch(`https://jsonplaceholder.typicode.com/todos/${id}`)
