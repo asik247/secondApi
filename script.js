@@ -122,17 +122,17 @@ const runCode = async () => {
 // runCode()
 
 // Repetated code start here;
-const commentsAll = async () =>{
-    try{
+const commentsAll = async () => {
+    try {
         const res = await fetch("https://jsonplaceholder.typicode.com/comments");
         const data = await res.json();
         showComments(data);
-    }catch(error){
-        console.log("Error Message",error);
+    } catch (error) {
+        console.log("Error Message", error);
     }
 }
-const showComments = (comments) =>{
-    comments.forEach(comment=>{
+const showComments = (comments) => {
+    comments.forEach(comment => {
         // console.log(comment);
     })
 }
@@ -141,9 +141,54 @@ const showComments = (comments) =>{
 
 // commentsAll after some console code here;
 
-const aferSomeCode =  async () =>{
+const aferSomeCode = async () => {
     await commentsAll();
     // console.log("Then successfullo run");
 }
 aferSomeCode()
 console.log("hello coditionally rendreing code");
+
+// Conditionally Rendering Code usign if else and variable;
+const condtionallyRendering = async () => {
+    // console.log("funk");
+    try {
+        const res = await fetch("https://jsonplaceholder.typicode.com/comments");
+        const data = await res.json();
+        displayShowComments(data)
+    } catch (error) {
+        console.log("Error Message:", error);
+    }
+}
+// show display;
+// {
+// "postId": 1,
+// "id": 1,
+// "name": "id labore ex et quam laborum",
+// "email": "Eliseo@gardner.biz",
+// "body": "laudantium enim quasi est quidem magnam voluptate ipsam eos\ntempora quo necessitatibus\ndolor quam autem quasi\nreiciendis et nam sapiente accusantium"
+// },
+const displayShowComments = (allComments) => {
+    const renderingContainer = document.getElementById("renderingContainer");
+    renderingContainer.innerHTML = '';
+    allComments.forEach(element => {
+        const div2 = document.createElement("div");
+        // rendering code ;
+        let render;
+        if (element.email5) {
+            render = "yes email find it"
+        } else {
+            render = "email not find"
+        }
+
+        div2.innerHTML = `
+            <p>${element.name}</p>
+            <h1 class = 'text-2xl font-bold'>${render}</h1>
+        `
+        // console.log(element);
+        renderingContainer.appendChild(div2)
+
+    })
+}
+// condtionallyRendering()
+
+
